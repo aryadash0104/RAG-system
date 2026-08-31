@@ -1,21 +1,27 @@
-# PDF Chunker with LangChain
+# RAG System
 
-A simple script to load PDF files and split them into manageable chunks using LangChain.
+PDF loading, chunking, embedding, and vector store for Retrieval-Augmented Generation.
 
 ## Dependencies
 
 ```bash
-pip install langchain langchain-community pypdf
+pip install langchain langchain-community langchain-huggingface pypdf faiss-cpu sentence-transformers
 ```
 
-## Usage
+## Modules
 
-1. Place your PDF file in the project directory
-2. Update `PDF_PATH` in `pdf_chunker.py` if needed
-3. Run the script:
+### pdf_chunker.py
+Loads PDF and splits into chunks.
 
 ```bash
 python pdf_chunker.py
+```
+
+### vector_store.py
+Creates embeddings and stores in FAISS for similarity search.
+
+```bash
+python vector_store.py
 ```
 
 ## Configuration
@@ -24,10 +30,8 @@ python pdf_chunker.py
 |------------------|---------|------------------------------------|
 | `chunk_size`     | 1000    | Maximum characters per chunk       |
 | `chunk_overlap`  | 200     | Overlap between consecutive chunks |
+| `model_name`     | all-MiniLM-L6-v2 | HuggingFace embedding model |
 
 ## Output
 
-The script prints:
-- Total pages loaded from the PDF
-- Total number of chunks created
-- Preview of the first 3 chunks
+- `vector_store/` - Saved FAISS index and embeddings
