@@ -24,6 +24,13 @@ Creates embeddings and stores in FAISS for similarity search.
 python vector_store.py
 ```
 
+### retrieval.py
+Query the vector store and retrieve relevant chunks.
+
+```bash
+python retrieval.py
+```
+
 ## Configuration
 
 | Parameter        | Default | Description                        |
