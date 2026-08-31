@@ -5,7 +5,7 @@ PDF loading, chunking, embedding, and vector store for Retrieval-Augmented Gener
 ## Dependencies
 
 ```bash
-pip install langchain langchain-community langchain-huggingface pypdf faiss-cpu sentence-transformers
+pip install langchain langchain-community langchain-huggingface pypdf faiss-cpu sentence-transformers transformers
 ```
 
 ## Modules
@@ -29,6 +29,13 @@ Query the vector store and retrieve relevant chunks.
 
 ```bash
 python retrieval.py
+```
+
+### generator.py
+Generate answers from retrieved chunks using LLM.
+
+```bash
+python generator.py
 ```
 
 ## Configuration
